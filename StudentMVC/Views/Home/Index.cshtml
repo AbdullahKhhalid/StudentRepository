@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome!!</h1>
+    <p>This is the Administration portal where the admin can view <a href="https://localhost:7232/Home/DisplayStudent">current students</a> and <a href="https://localhost:7232/Home/AddStudent">add</a> or delete students.</p>
+</div>
+<br />
+
+<div class="w3-content w3-section" @*style="max-width:100%"*@>
+    <img class="mySlides" src="~/css/Building.jpg" style="margin: 0 auto; width:465px">
+    <img class="mySlides" src="~/css/Library.jpg" style="margin: 0 auto; width:500px">
+</div>
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+</script>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<StudentEntity>
+
+@{
+    ViewData["Title"] = "Displaying Student Data";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("Student Id")</th>
+            <th>@Html.DisplayName("Full Name")</th>
+            <th>@Html.DisplayName("Department")</th>
+            <th>@Html.DisplayName("Year")</th>
+            <th>@Html.DisplayName("Roll Number")</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model)
+        {
+            <tr>
+                <td>@row.Id</td>
+                <td>@row.Name</td>
+                <td>@row.Department</td>
+                <td>@row.Year</td>
+                <td>@row.RollNumber</td>
+                <td><a href="UpdateStudent/@row.Id">Update</a></td>
+                <td><a href="DeleteStudent/@row.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
